@@ -9,3 +9,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN pecl install -o -f redis \
     &&  rm -rf /tmp/pear \
     &&  echo "extension=redis.so" > /usr/local/etc/php/conf.d/redis.ini
+
+RUN pecl install mongodb \
+    &&  rm -rf /tmp/pear \
+    &&  echo "extension=mongo.so" > /usr/local/etc/php/conf.d/mongo.ini
